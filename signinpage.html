@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-image: url('picture1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            display: flex;
+            width: 1300px;
+            height: 650px;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .left-side {
+            flex: 2;
+            background-image: url('background.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .left-side::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            /* Increased saturation effect */
+            backdrop-filter: saturate(180%);
+        }
+        
+        .left-content {
+            position: relative;
+            z-index: 1;
+            text-align: left;
+            padding-left: 40px;
+        }
+        
+        .left-side h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: left;
+            padding-left: 130px;
+        }
+        
+        .left-side p {
+            font-size: 21px;
+            margin: 0;
+            line-height: 0.6;
+            text-align: left;
+            padding-left: 130px;
+            white-space: pre-line;
+        }
+        
+        .signin-text {
+            display: none;
+        }
+        
+        .right-side {
+            flex: 1;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+            width: 100%;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 90%;
+            padding: 15px 15px 15px 45px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 15px;
+            transition: all 0.3s;
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #9575CD;
+            box-shadow: 0 0 0 2px rgba(0, 102, 204, 0.2);
+            outline: none;
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 19px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+            font-size: 14px;
+        }
+        
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 13px;
+            width: 89%;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 6px;
+            position: relative;
+            top: 0px;
+        }
+        
+        .forgot-password {
+            color: #9575CD;
+            text-decoration: none;
+            font-size: 13px;
+        }
+        
+        .signin-button {
+            background-color: #9575CD;
+            color: white;
+            border: none;
+            padding: 14px;
+            width: 90%;
+            border-radius: 25px;
+            font-size: 15px;
+            cursor: pointer;
+            margin-bottom: 15px;
+            transition: background-color 0.3s;
+            font-weight: 600; /* Made button text bold */
+        }
+        
+        .signin-button:hover {
+            background-color: #745c9e;
+        }
+        
+        .create-account {
+            color: #666;
+            font-size: 14px;
+            text-align: left;
+            margin-top: 10px;
+            padding-left: 16%;
+            width: 90%;
+        }
+        
+        .create-account a {
+            color: #9575CD;
+            text-decoration: none;
+            font-weight: 600; /* Made "Create an Account" bold */
+        }
+        
+        .right-content {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        .signin-title {
+    font-size: 30px;           /* Increased from 24px */
+    margin-bottom: 20px;       /* Increased from 15px */
+    font-weight: bold;         /* Changed from 600 to bold */
+    text-align: left;
+    display: block;
+    color: #333;              /* Changed from #434040 */
+    padding-left: 10px;       /* Added padding */
+    letter-spacing: -0.5px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="left-content">
+                <div class="signin-text">Sign In</div>
+                <h1>Welcome back!</h1>
+                <p>You can sign in to access with your<br><br>existing account.</p>
+            </div>
+        </div>
+        
+        <div class="right-side">
+            <div class="right-content">
+                <h2 class="signin-title">Sign In</h2>
+                
+                <div class="form-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" id="username" placeholder="Username or email">
+                </div>
+                
+                <div class="form-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                
+                <div class="options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+                
+                <button class="signin-button">Sign In</button>
+                
+                <p class="create-account">New here? <a href="#">Create an Account</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
